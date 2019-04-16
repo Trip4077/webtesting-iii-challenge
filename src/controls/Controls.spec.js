@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, cleanup, fireEvent } from 'react-testing-library';
 
+import palm from 'react-test-renderer';
 import Controls from './Controls';
 
 import 'jest-dom/extend-expect';
@@ -73,4 +74,28 @@ describe('<Controls />', () => {
 
         expect(mock).toHaveBeenCalled();
     });
-})
+
+    it('matches snapshot: L - false, C - false', () => {
+        const tree = palm.create(<Controls />);
+
+        expect(tree.toJSON()).toMatchSnapshot();
+    });
+
+    it('matches snapshot: L - true, C - false', () => {
+        const tree = palm.create(<Controls locked={true} />);
+
+        expect(tree.toJSON()).toMatchSnapshot();
+    });
+
+    it('matches snapshot: L - false, C - true', () => {
+        const tree = palm.create(<Controls closed={true} />);
+
+        expect(tree.toJSON()).toMatchSnapshot();
+    });
+
+    it('matches snapshot: L - true, C - true', () => {
+        const tree = palm.create(<Controls loked={true} closed={true}/>);
+
+        expect(tree.toJSON()).toMatchSnapshot();
+    });
+});
