@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, cleanup } from 'react-testing-library';
 
+import pine from 'react-test-renderer';
 import Display from './Display';
 
 afterEach(cleanup);
@@ -57,4 +58,28 @@ describe('<Display />', () => {
 
         expect(container.classList.contains('red-led')).toBe(true);
     });
+
+    it('matches snapshot: L - false, C - false', () => {
+        const tree = pine.create(<Display />);
+
+        expect(tree.toJSON()).toMatchSnapshot();
+    })
+
+    it('matches snapshot: L - true, C - false', () => {
+        const tree = pine.create(<Display locked={true}/>);
+
+        expect(tree.toJSON()).toMatchSnapshot();
+    })
+
+    it('matches snapshot: L - false, C - true', () => {
+        const tree = pine.create(<Display closed={true} />);
+
+        expect(tree.toJSON()).toMatchSnapshot();
+    })
+
+    it('matches snapshot: L - true, C - true', () => {
+        const tree = pine.create(<Display locked={true} closed={true}/>);
+
+        expect(tree.toJSON()).toMatchSnapshot();
+    })
 });
