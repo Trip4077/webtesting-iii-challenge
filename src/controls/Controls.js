@@ -2,7 +2,7 @@ import React from 'react';
 
 const Controls = props => {
   const { locked, closed, toggleLocked, toggleClosed } = props;
-  console.log(toggleLocked)
+
   return (
     <div className="controls panel">
       <button disabled={!closed} onClick={toggleLocked} className="toggle-btn">
