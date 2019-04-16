@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, cleanup } from 'react-testing-library';
 
+import oak from 'react-test-renderer';
 import Dashboard from './Dashboard';
 
 afterEach(cleanup);
@@ -20,6 +21,11 @@ describe('<Dashboard />', () => {
         const { getByText } = render(<Dashboard />)
 
         getByText(/close gate/i)
-    }); 
-})
+    });
+    
+    it('matches snapshot', () => {
+        const tree = oak.create(<Dashboard />);
 
+        expect(tree.toJSON()).toMatchSnapshot();
+    });
+});

@@ -63,23 +63,23 @@ describe('<Display />', () => {
         const tree = pine.create(<Display />);
 
         expect(tree.toJSON()).toMatchSnapshot();
-    })
+    });
 
     it('matches snapshot: L - true, C - false', () => {
         const tree = pine.create(<Display locked={true}/>);
 
         expect(tree.toJSON()).toMatchSnapshot();
-    })
+    });
 
     it('matches snapshot: L - false, C - true', () => {
         const tree = pine.create(<Display closed={true} />);
 
         expect(tree.toJSON()).toMatchSnapshot();
-    })
+    });
 
     it('matches snapshot: L - true, C - true', () => {
         const tree = pine.create(<Display locked={true} closed={true}/>);
 
         expect(tree.toJSON()).toMatchSnapshot();
-    })
+    });
 });
