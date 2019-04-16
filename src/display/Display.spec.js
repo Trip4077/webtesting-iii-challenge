@@ -57,4 +57,4 @@ describe('<Display />', () => {
 
         expect(container.classList.contains('red-led')).toBe(true);
     });
-})
+});
