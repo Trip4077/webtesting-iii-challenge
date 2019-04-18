@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Controls /> matches snapshot: L - false, C - false 1`] = `
+<div
+  className="controls panel"
+>
+  <button
+    className="toggle-btn"
+    disabled={true}
+  >
+    Lock Gate
+  </button>
+  <button
+    className="toggle-btn"
+  >
+    Close Gate
+  </button>
+</div>
+`;
+
+exports[`<Controls /> matches snapshot: L - false, C - true 1`] = `
+<div
+  className="controls panel"
+>
+  <button
+    className="toggle-btn"
+    disabled={false}
+  >
+    Lock Gate
+  </button>
+  <button
+    className="toggle-btn"
+  >
+    Open Gate
+  </button>
+</div>
+`;
+
+exports[`<Controls /> matches snapshot: L - true, C - false 1`] = `
+<div
+  className="controls panel"
+>
+  <button
+    className="toggle-btn"
+    disabled={true}
+  >
+    Unlock Gate
+  </button>
+  <button
+    className="toggle-btn"
+    disabled={true}
+  >
+    Close Gate
+  </button>
+</div>
+`;
+
+exports[`<Controls /> matches snapshot: L - true, C - true 1`] = `
+<div
+  className="controls panel"
+>
+  <button
+    className="toggle-btn"
+    disabled={false}
+  >
+    Lock Gate
+  </button>
+  <button
+    className="toggle-btn"
+  >
+    Open Gate
+  </button>
+</div>
+`;
